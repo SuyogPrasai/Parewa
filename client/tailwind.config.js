@@ -13,7 +13,8 @@ module.exports = {
         highlight: '#6095ba',
         greenish: '#629584',
         foreground: '#E2F1E7',
-        db: '#00001C'
+        db: '#00001C',
+        button_bg: "#eaeaea",
       },
     },
   },
