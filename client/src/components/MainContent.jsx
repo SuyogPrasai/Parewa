@@ -17,8 +17,10 @@ const MainContent = () => {
   ];
 
   return (
-    <div className="w-full md:w-4/5 p-6 bg-gray-50 rounded-3xl shadow-2xl">
-      <h2 className="text-2xl font-bold text-primary mb-8 pb-3 border-b-2 border-gray-300 tracking-wide font-sans">
+    <div className="w-full md:w-4/5 p-6 bg-gray-50 rounded-3xl shadow-2xl 
+                    lg:ml-0 mx-auto lg:max-w-full max-w-screen-sm">
+      <h2 className="text-2xl font-bold text-primary mb-8 pb-3 border-b-2 border-gray-300 tracking-wide font-sans 
+                     text-center lg:text-left">
         Main Content
       </h2>
       <div className="space-y-6">

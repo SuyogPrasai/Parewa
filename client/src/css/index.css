@@ -11,3 +11,11 @@
     -moz-user-select: none;     /* Firefox */
     -ms-user-select: none;      /* Internet Explorer/Edge */
   }
+
+/* Center Main Content on screens less than 1023px */
+@media (max-width: 1023px) {
+  .main-content {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
