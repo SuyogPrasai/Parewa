@@ -9,15 +9,17 @@ const SidebarItem = ({ icon, text }) => (
 
 const Sidebar = ({ isMobile = false }) => {
   const sidebarItems = [
+    
+    { icon: "fas fa-bullhorn", text: "📒 General" },
+    { icon: "fas fa-bullhorn", text: "📕 School" },
     { icon: "fas fa-bullhorn", text: "📤 Departments" },
     { icon: "fas fa-bullhorn", text: "🎼 Clubs" },
-    { icon: "fas fa-bullhorn", text: "📕 School" },
   ];
 
   return (
     <aside className={`${isMobile ? "w-full text-center" : "hidden lg:block lg:w-1/4"} shadow-2xl rounded-3xl p-6 border border-gray-200 bg-white`}>
       <h2 className="text-lg font-title text-primary font-semibold mb-6 pb-3 border-b-2 border-gray-300 tracking-wide">
-        Notice Sources
+        Categories
       </h2>
       <ul className="space-y-4">
         {sidebarItems.map((item, index) => (

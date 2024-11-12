@@ -1,9 +1,11 @@
 import React from 'react';
+
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Info from './components/Info';
+import Email from './components/Email'
 
 const App = () => {
   return (
@@ -12,12 +14,12 @@ const App = () => {
       <Header />
 
       {/* Main Content Section */}
-      <div className="hero-container flex flex-col md:flex-row justify-center items-start px-4 md:px-8 lg:px-12 py-8 w-full mt-4">
+      <div className="hero-container flex flex-col md:flex-row justify-center items-start px-4 md:px-8 lg:px-12 py-8 w-full mt-4 relative">
         {/* Background Layer */}
         <div className="main-content-bg absolute inset-0 z-0" />
 
         {/* Centered Wrapper with Max Width */}
-        <div className="flex flex-grow h-full max-w-5xl w-full gap-4 relative z-10 mb-8">
+        <div className="flex flex-grow h-full max-w-5xl w-full gap-4 z-10 mb-8">
           {/* Sidebar with responsive visibility */}
           <Sidebar className="hidden lg:block lg:w-1/4" />
 
@@ -25,6 +27,8 @@ const App = () => {
           <MainContent className="h-full flex-grow" />
         </div>
       </div>
+
+      <Email />
 
       {/* Info Section */}
       <Info />
@@ -36,4 +40,3 @@ const App = () => {
 };
 
 export default App;
-

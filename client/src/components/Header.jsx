@@ -11,10 +11,11 @@ const NavItem = ({ href, children, onClick }) => (
   </li>
 );
 
-const ActionButton = ({ href, text, bgColor, textColor, onClick }) => (
+const ActionButton = ({ href, text, bgColor, textColor }) => (
   <a
     href={href}
-    onClick={onClick}
+    target="_blank" // To open in a new tab (optional)
+    rel="noopener noreferrer" // For security purposes when opening a new tab
     className={`${bgColor} ${textColor} rounded-md border-2 border-transparent px-5 py-2.5 text-sm font-medium shadow transition duration-300 ease-in-out hover:bg-transparent hover:border-blue-500 hover:text-blue-500`}
   >
     {text}
@@ -27,9 +28,9 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navItems = [
-    { href: '#', text: 'About' },
-    { href: '#', text: 'Fill In' },
-    { href: '#', text: 'Contact' },
+    { href: '#email', text: 'NewsLetter' },
+    { href: '#info', text: 'About' },
+    { href: '#', text: 'Contributors' },
   ];
 
   return (
@@ -48,7 +49,7 @@ const Header = () => {
           <div className="lg:hidden">
             <button
               onClick={toggleMenu}
-              className="relative w-8 h-8 flex flex-col items-center justify-center space-y-[6px] focus:outline-none z-50" // z-50 ensures it's clickable above overlay
+              className="relative w-8 h-8 flex flex-col items-center justify-center space-y-[6px] focus:outline-none z-50"
             >
               <div
                 className={`w-full h-[2px] bg-gray-900 transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-[8px] w-[70%]' : 'rotate-0 w-full'}`}
@@ -74,12 +75,12 @@ const Header = () => {
               </ul>
             </nav>
 
+            {/* Submit Notice button in desktop view */}
             <ActionButton
-              href="#"
+              href="https://docs.google.com/forms/d/1jJwE0RdrXI9pR9ee4DN9M0NL0OqcPCJuai2hZJ_zfw4/viewform?edit_requested=true"
               text="Submit Notice"
               bgColor="bg-blue-500"
               textColor="text-white"
-              onClick={toggleMenu}
             />
           </div>
         </div>
@@ -98,11 +99,10 @@ const Header = () => {
               ))}
               {/* Submit Notice button in mobile view */}
               <ActionButton
-                href="#"
+                href="https://docs.google.com/forms/d/1jJwE0RdrXI9pR9ee4DN9M0NL0OqcPCJuai2hZJ_zfw4/viewform?edit_requested=true"
                 text="Submit Notice"
                 bgColor="bg-blue-500"
                 textColor="text-white"
-                onClick={toggleMenu}
               />
             </ul>
           </nav>

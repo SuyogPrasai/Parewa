@@ -4,6 +4,12 @@
 @tailwind utilities;
 
 
+html {
+  scroll-padding-top: 100px;
+  scroll-behavior: smooth;
+
+}
+
 /* Apply this to the element you want to disable text selection for */
 .no-select {
     user-select: none;          /* Standard syntax */
