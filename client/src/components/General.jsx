@@ -1,4 +1,5 @@
 import React from 'react';
+import NoticeCard from './NoticeCard';
 
 // Reusable Notice Component
 const Notice = ({ title, content }) => (
@@ -8,29 +9,45 @@ const Notice = ({ title, content }) => (
   </div>
 );
 
-const MainContent = () => {
+const General = ({title}) => {
   // Notice data can be dynamically fetched or passed as props
   const notices = [
-    { title: 'Notice 1', content: 'This is the content for Notice 1. Add more information here as needed.' },
-    { title: 'Notice 2', content: 'This is the content for Notice 2. Add more information here as needed.' },
-    { title: 'Notice 3', content: 'This is the content for Notice 3. Add more information here as needed.' }
+    {
+      title: "School Announcement",
+      description: "There will be an assembly on Monday.",
+      author: "Admin",
+      date: "2024-11-12",
+    },
+    {
+      title: "Club Event",
+      description: "Join us for a special coding workshop.",
+      author: "Tech Club",
+      date: "2024-11-10",
+    },
+    // Add more notices as needed
   ];
 
   return (
     <div className="w-full md:w-4/5 p-6 bg-gray-50 rounded-3xl shadow-2xl 
-                    lg:ml-0 mx-auto lg:max-w-full max-w-screen-sm">
+                    lg:ml-0 mx-auto lg:max-w-full max-w-screen-sm h-[72vh]">
       <h2 className="text-2xl font-bold text-primary mb-8 pb-3 border-b-2 border-gray-300 tracking-wide font-sans 
                      text-center lg:text-left">
-        Main Content
+        {title}
       </h2>
       <div className="space-y-6">
         {/* Dynamically rendering notices */}
         {notices.map((notice, index) => (
-          <Notice key={index} title={notice.title} content={notice.content} />
-        ))}
+        <NoticeCard
+          key={index}
+          title={notice.title}
+          description={notice.description}
+          author={notice.author}
+          date={notice.date}
+        />
+      ))}
       </div>
     </div>
   );
 };
 
-export default MainContent;
+export default General;
